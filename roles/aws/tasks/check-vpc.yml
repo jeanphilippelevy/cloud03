@@ -1,0 +1,13 @@
+---
+- name: Ensure VPC {{ aws_vpc_name }} is present
+  ec2_vpc_net:
+    name: "{{ aws_vpc_name }}"
+    cidr_block: "{{ aws_vpc_cidr_block }}"
+    dns_hostnames: "{{ aws_vpc_dns_hostnames }}"
+    dns_support: "{{ aws_vpc_dns_support }}"
+    purge_cidrs: yes
+    region: "{{ aws_region }}"
+    tags:
+      Environment: "{{ aws_environment }}"
+    state: present
+

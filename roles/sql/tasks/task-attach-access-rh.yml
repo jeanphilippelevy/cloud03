@@ -1,0 +1,17 @@
+---
+    - name: Ansible remove file
+      file:
+        path: "/etc/yum.repos.d/rhel.repo"
+        state: absent
+
+    - name: Ansible remove file
+      file:
+        path: "/etc/yum.repos.d/redhat.repo"
+        state: absent
+
+    - name: Enregistrement a access red hat avec la cle d'activation
+      redhat_subscription:
+        state: present
+        activationkey: "clouddaykey1"
+        org_id: "5318211"
+      ignore_errors: True

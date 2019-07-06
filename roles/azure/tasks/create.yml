@@ -1,0 +1,89 @@
+---
+
+- name: Create public ip
+  local_action:
+    module: azure_rm_publicipaddress
+    resource_group: "{{ az_resourcegroup_name }}"
+    allocation_method: "{{ az_public_ip_method }}"
+    name: "{{ az_public_ip_name }}"
+
+- name: Create NIC
+  local_action:
+    module: azure_rm_networkinterface
+    resource_group: "{{ az_resourcegroup_name }}"
+    name: "{{ az_vm_nic_name }}"
+    virtual_network: "{{ az_virtualnet_name }}"
+    subnet: "{{ az_subnet_name }}"
+    public_ip_name: "{{ az_public_ip_name }}"
+    security_group: "{{ az_secgroup_name }}"
+
+- name: "Create Virtual Machine {{ az_vm_name }}"
+  local_action:
+    module: azure_rm_virtualmachine
+    resource_group: "{{ az_resourcegroup_name }}"
+    location: "{{ az_location }}"
+    name: "{{ az_vm_name }}"
+    vm_size: "{{ az_vm_size }}"
+    os_type: "Linux"
+    storage_account_name: "{{ az_storageaccount_name }}"
+    network_interface_names: "{{ az_vm_nic_name }}"
+    admin_username: "{{ az_vm_admin_user }}"
+    #admin_password: "{{ az_vm_admin_pwd }}"
+    ssh_public_keys:
+      - path: "{{ az_vm_ssh_keypath }}"
+        key_data: "{{ az_vm_ssh_keydata }}"
+    ssh_password_enabled: "{{ az_ssh_pwd_enabled }}"
+    image:
+      offer: "{{ az_image_offer }}"
+      publisher: "{{ az_image_publisher }}"
+      sku: "{{ az_image_sku }}"
+      version: "{{ az_image_version }}"
+    tags:
+      purpose: "{{ az_environment }}"
+      application: "{{ az_application }}"
+  when: os_type == "rhel"
+
+- name: "Create Virtual Machine {{ az_vm_name }}"
+  local_action:
+    module: azure_rm_virtualmachine
+    resource_group: "{{ az_resourcegroup_name }}"
+    location: "{{ az_location }}"
+    name: "{{ az_vm_name }}"
+    vm_size: "{{ az_vm_size }}"
+    os_type: "Linux"
+    storage_account_name: "{{ az_storageaccount_name }}"
+    network_interface_names: "{{ az_vm_nic_name }}"
+    admin_username: "{{ az_vm_admin_user }}"
+    admin_password: "{{ az_vm_admin_pwd }}"
+    ssh_password_enabled: "{{ az_ssh_pwd_enabled }}"
+    image:
+      offer: "{{ az_image_offer }}"
+      publisher: "{{ az_image_publisher }}"
+      sku: "{{ az_image_sku }}"
+      version: "{{ az_image_version }}"
+    tags:
+      purpose: "{{ az_environment }}"
+      application: "{{ az_application }}"
+  when: os_type == "linux"
+
+- name: "Create Virtual Machine {{ az_vm_name }}"
+  local_action:
+    module: azure_rm_virtualmachine
+    resource_group: "{{ az_resourcegroup_name }}"
+    location: "{{ az_location }}"
+    name: "{{ az_vm_name }}"
+    vm_size: "{{ az_vm_size }}"
+    os_type: "Windows"
+    storage_account_name: "{{ az_storageaccount_name }}"
+    network_interface_names: "{{ az_vm_nic_name }}"
+    admin_username: "{{ az_vm_admin_user }}"
+    admin_password: "{{ az_vm_admin_pwd }}"
+    image:
+      offer: "{{ az_image_offer }}"
+      publisher: "{{ az_image_publisher }}"
+      sku: "{{ az_image_sku }}"
+      version: "{{ az_image_version }}"
+    tags:
+      purpose: "{{ az_environment }}"
+      application: "{{ az_application }}"
+  when: os_type == "windows"

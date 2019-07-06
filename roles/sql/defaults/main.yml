@@ -1,0 +1,25 @@
+---
+
+mssql_repo_src: "https://packages.microsoft.com/rhel/7/mssql-server-2017/"
+mssql_repo: "mssql-server-2017"
+mssql_tool_repo_src: "https://packages.microsoft.com/rhel/7/prod/"
+mssql_tool_repo: "prod"
+gpgkey: "https://packages.microsoft.com/keys/microsoft.asc"
+mssql_package: "mssql-server"
+mssql_service: "mssql-server"
+mssql_tool_packages:
+  - mssql-tools
+  - unixODBC-devel
+mssql_sa_password: '!Passw0rd'
+mssql_pid: 'evaluation'
+mssql_install_agent: 'y'
+mssql_ports: "1443/tcp"
+src_loaddb_sql: "https://raw.githubusercontent.com/mheslin/SQL-Server---RHEL-BM-Demo/master/Load_DB.sql"
+#tgt_loaddb_sql: "/home/cloud-user/Load_DB.sql"
+tgt_loaddb_sql: "/home/ec2-user/Load_DB.sql"
+src_querydb_sql: "https://raw.githubusercontent.com/mheslin/SQL-Server---RHEL-BM-Demo/master/Query_DB.sql"
+#tgt_querydb_sql: "/home/cloud-user/Query_DB.sql"
+tgt_querydb_sql: "/home/ec2-user/Query_DB.sql"
+src_dropdb_sql: "https://raw.githubusercontent.com/mheslin/SQL-Server---RHEL-BM-Demo/master/Drop_DB.sql"
+#tgt_dropdb_sql: "/home/cloud-user/Drop_DB.sql"
+tgt_dropdb_sql: "/home/ec2-user/Drop_DB.sql"

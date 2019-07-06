@@ -1,0 +1,17 @@
+---
+- name: Deploy role server on target VM
+  hosts: "{{ instance_name }}"
+  gather_facts: false
+
+  vars:
+    instance_name: "dummy"
+    target_role: "lamp-role"
+
+  tasks:
+  - include_role:
+      name: lamp
+    when: target_role == 'lamp-role'
+
+  - include_role:
+      name: sql
+    when: target_role == 'sql-role'

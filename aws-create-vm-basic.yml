@@ -1,0 +1,37 @@
+---
+- name: Deploy one VM on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    ec2_environment: prod
+    instance_name: "dummy"
+
+  tasks:
+    - name: Create basic EC2 Instance
+      ec2:
+        state: present
+        region: us-east-1
+        key_name: aws-dskp01
+        instance_type: t2.small
+        image: ami-000db10762d0c4c05
+        wait: yes
+        group: ds-aws-secugroup-01
+        count: 1
+        vpc_subnet_id: subnet-9e4414c2
+        assign_public_ip: yes
+        validate_certs: no
+        #instance_tags:
+        #  Name: "{{ instance_name }}"
+      ignore_errors: yes
+      register: ec2dump
+
+    - name: debug ec2dump
+      debug:
+        var: ec2dump
+  #roles:
+  #  - role: aws
+  #    instance_role: "lamp"
+  #    os_type: "rhel"
+  #    ami_id: "ami-000db10762d0c4c05"

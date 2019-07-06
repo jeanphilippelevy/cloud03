@@ -1,0 +1,40 @@
+---
+vmweb: "{{ inventory_hostname }}"
+vmdb: "{{ vmweb }}"
+dbname: "dbname"
+dbuser: "dbusername"
+dbpass: "dbpass"
+lib_db: "mariadb-libs"
+
+katello_path: http://sat.example.com/pub/katello-ca-consumer-latest.noarch.rpm
+
+web_packages:
+  - httpd
+  - php
+  - php-mysql
+  - libsemanage-python
+  - firewalld
+
+web_packages_2: [ httpd, php, php-mysql, libsemanage-python, firewalld ]
+
+web_packages_shell: httpd php php-mysql libsemanage-python firewalld
+
+index_src: "jinja2/index.php.j2"
+
+firewall_services_web:
+  - http
+  - https
+
+db_packages:
+  - mariadb
+  - mariadb-server
+  - MySQL-python
+  - php-mysql
+  - firewalld
+
+db_packages_shell: mariadb mariadb-server MySQL-python
+
+firewall_services_db:
+  - mysql
+
+networkcnf_src: "jinja2/etc_my.cnf.d_network.cnf.j2"

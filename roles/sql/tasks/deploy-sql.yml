@@ -1,0 +1,128 @@
+---
+- name: Inclure les taches d'attachement a la souscription
+  include: task-attach-access-rh.yml
+
+- name: Print Red Hat release
+  command: "cat /etc/redhat-release"
+  register: rhrelease
+
+- debug: msg="{{ rhrelease.stdout }}"
+- debug: msg="{{ rhrelease.stderr }}"
+
+- name: Configure Microsoft SQL Server Red Hat repository
+  yum_repository:
+    name: "{{ mssql_repo }}"
+    description: "{{ mssql_repo }}"
+    file: external_repos
+    baseurl: "{{ mssql_repo_src }}"
+    gpgcheck: yes
+    gpgkey: "{{ gpgkey }}"
+    enabled: yes
+
+- name: Configure Microsoft SQL Tool Red Hat repository
+  yum_repository:
+    name: "{{ mssql_tool_repo }}"
+    description: "{{ mssql_tool_repo }}"
+    file: external_repos
+    baseurl: "{{ mssql_tool_repo_src }}"
+    gpgcheck: yes
+    gpgkey: "{{ gpgkey }}"
+    enabled: yes
+
+- name: Install SQL server package
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages: "{{ mssql_package }}"
+
+- name: Stop SQL server service
+  service:
+    name: "{{ mssql_service }}"
+    state: stopped
+
+
+- name: Install SQL Server
+  command: "/opt/mssql/bin/mssql-conf -n setup accept-eula "
+  environment:
+    MSSQL_SA_PASSWORD: "{{ mssql_sa_password }}"
+    MSSQL_PID: "{{ mssql_pid }}"
+    SQL_INSTALL_AGENT: "{{ mssql_install_agent }}"
+  register: installsql
+
+- debug: msg="{{ installsql.stdout }}"
+- debug: msg="{{ installsql.stderr }}"
+
+- name: Ensure SQL server service is started
+  service:
+    name: "{{ mssql_service }}"
+    state: started
+
+- name: Install firewalld package
+  shell: "yum -y install firewalld"
+
+- name: Activate firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Configure Firewall connections to allow remote access
+  firewalld:
+    state: enabled
+    zone: public
+    immediate: true
+    port: "{{ item }}"
+    permanent: true
+  with_items: "{{ mssql_ports }}"
+
+- name: Restart firewall service
+  systemd:
+    name: firewalld
+    masked: no
+    enabled: yes
+    state: restarted
+
+- name: Install mssql-tools and the unixODBC developer package
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages: "{{ mssql_tool_packages}}"
+  environment:
+    ACCEPT_EULA: 'y'
+
+- name: Copy Load_DB.sql
+  get_url:
+    url: "{{ src_loaddb_sql }}"
+    dest: "{{ tgt_loaddb_sql }}"
+
+- name: Copy Query_DB.sql
+  get_url:
+    url: "{{ src_querydb_sql }}"
+    dest: "{{ tgt_querydb_sql }}"
+
+- name: Copy Drop_DB.sql
+  get_url:
+    url: "{{ src_dropdb_sql }}"
+    dest: "{{ tgt_dropdb_sql }}"
+
+- name: Load DataBase
+  command: "/opt/mssql-tools/bin/sqlcmd -U SA -P {{ mssql_sa_password }} -i {{ tgt_loaddb_sql }}"
+  register: loaddb
+
+- debug: msg="{{ loaddb.stdout }}"
+- debug: msg="{{ loaddb.stderr }}"
+
+
+- name: Query DataBase
+  command: "/opt/mssql-tools/bin/sqlcmd -U SA -P {{ mssql_sa_password }} -i {{ tgt_querydb_sql }}"
+  register: querydb
+
+- debug: msg="{{ querydb.stdout }}"
+- debug: msg="{{ querydb.stderr }}"
+
+- name: Dump querycommand.txt
+  lineinfile:
+    path: /home/cloud-user/querycommand.txt
+    line: "/opt/mssql-tools/bin/sqlcmd -U SA -P '{{ mssql_sa_password }}' -i {{ tgt_querydb_sql }}"
+    create: yes

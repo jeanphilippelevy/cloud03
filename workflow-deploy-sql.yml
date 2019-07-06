@@ -1,0 +1,10 @@
+---
+- name: Deploy SQL server on target VM
+  hosts: "{{ instance_name }}"
+  gather_facts: false
+
+  vars:
+    instance_name: "dummy"
+
+  roles:
+    - role: sql

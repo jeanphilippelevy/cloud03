@@ -1,0 +1,15 @@
+---
+- name: Deploy one VM on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    ec2_environment: prod
+    instance_name: "dummy"
+
+  roles:
+    - role: aws
+      instance_role: "lamp"
+      os_type: "rhel"
+      ami_id: "ami-000db10762d0c4c05"

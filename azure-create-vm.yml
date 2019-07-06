@@ -1,0 +1,22 @@
+---
+- name: Deploy one VM on Azure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    az_environment: prod
+    instance_name: "dummy"
+    az_vm_name: "{{ instance_name }}"
+
+
+  roles:
+    - role: azure
+      instance_role: "sqlserver"
+      instance_ansible_port: "22"
+      instance_ansible_user: "cloud-user"
+      os_type: "rhel"
+      az_image_offer: "RHEL"
+      az_image_publisher: "RedHat"
+      az_image_sku: "7.4"
+      az_ssh_pwd_enabled: "false"

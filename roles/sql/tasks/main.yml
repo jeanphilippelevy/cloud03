@@ -1,0 +1,5 @@
+---
+
+- include: deploy-sql.yml
+  tags:
+    - deploy_sql
