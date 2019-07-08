@@ -1,7 +1,6 @@
 ---
 - name: Includes VPC check task:
-  include_tasks:
-    - ec2_vpc.yml
+  include_tasks: ec2_vpc.yml
   when: ec2_vpc_task == True
 
 - name: Includes security group and instance creation tasks:
