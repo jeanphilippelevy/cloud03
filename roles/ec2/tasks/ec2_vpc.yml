@@ -9,4 +9,3 @@
     region: "{{ aws_region }}"
     state: present
   when: ec2_vpc_task == True
-   

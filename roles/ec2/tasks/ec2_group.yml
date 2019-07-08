@@ -1,10 +1,10 @@
 ---
 - name: Create/check security group for instances
   ec2_group:
-    name: "{{ ec2_security_group }}"
-    description: "{{ ec2_security_group }}"
-    region: "{{ ec2_region }}"
-    vpc_id: "{{ ec2_vpc_id }}"
+    name: "{{ aws_security_group }}"
+    description: "{{ aws_security_group }}"
+    region: "{{ aws_region }}"
+    vpc_id: "{{ aws_vpc_id }}"
     rules:
       - proto: "tcp"
         ports:
