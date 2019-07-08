@@ -3,8 +3,11 @@
   include_tasks: "ec2_vpc.yml"
   when: ec2_vpc_task == True
 
-- name: Includes security group and instance creation tasks
-  include_tasks:
-    - ec2_group.yml
-    - ec2_instance.yml
-  when: ec2_group_task == True and ec2_instance_task == True
+- name: Includes security group tasks
+  include_tasks: "ec2_group.yml"
+  when: ec2_group_task == True
+
+- name: Includes instance creation tasks
+  include_tasks: "ec2_instance.yml"
+  when: ec2_instance_task == True
+  
