@@ -18,4 +18,4 @@ os_type: "rhel"
 
 ec2_group_task: True
 ec2_instance_task: True
-ec2_vpc_task: False
+ec2_vpc_task: True
