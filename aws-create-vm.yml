@@ -9,7 +9,7 @@
     instance_name: "dummy"
 
   roles:
-    - role: aws
+    - role: ec2
       instance_role: "lamp"
       os_type: "rhel"
       ami_id: "ami-000db10762d0c4c05"

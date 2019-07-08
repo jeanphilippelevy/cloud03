@@ -1,23 +1,4 @@
-- name: Create/check security group for instances
-  ec2_group:
-    name: "{{ ec2_security_group }}"
-    description: "{{ ec2_security_group }}"
-    region: "{{ ec2_region }}"
-    vpc_id: "{{ ec2_vpc_id }}"
-    rules:
-      - proto: "tcp"
-        ports:
-          - 22
-          - 80
-          - 443
-          - 389
-          - 5986
-        cidr_ip: "0.0.0.0/0"
-    rules_egress:
-      - proto: "all"
-        cidr_ip: "0.0.0.0/0"
-  register: secgrp
-
+---
 - name: Create EC2 RHEL Instance
   ec2:
     region: "{{ ec2_region }}"
@@ -31,8 +12,6 @@
     wait_timeout: 600
     instance_tags:
        Name: "{{ instance_name }}"
-       #Environment: "{{ ec2_environment }}"
-       #Server_Role: "{{ instance_role }}"
     count: "{{ ec2_instance_count }}"
   when: os_type == "rhel"
   register: output_ec2_lin

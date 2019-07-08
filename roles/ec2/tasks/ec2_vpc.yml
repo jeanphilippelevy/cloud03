@@ -7,7 +7,6 @@
     dns_support: "{{ aws_vpc_dns_support }}"
     purge_cidrs: yes
     region: "{{ aws_region }}"
-    tags:
-      Environment: "{{ aws_environment }}"
     state: present
-
+  when: ec2_vpc_task == True
+   
