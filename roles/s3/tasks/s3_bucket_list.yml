@@ -1,0 +1,5 @@
+---
+- name: S3 bucket - list keys
+  aws_s3:
+    bucket: "{{ s3_bucket_name }}"
+    mode: list

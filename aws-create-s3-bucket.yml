@@ -1,0 +1,14 @@
+---
+- name: Create s3 bucket on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+
+
+  roles:
+    - role: s3
+      is3_bucket_state: present
+      s3_bucket_task: True
+      s3_bucket_upload_task: True
+      s3_bucket_list_task: True

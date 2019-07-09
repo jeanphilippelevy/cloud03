@@ -1,0 +1,6 @@
+---
+- name: Upload content to S3 bucket
+  s3_sync:
+    bucket: "{{ s3_bucket_name }}"
+    file_root: " {{ s3_file_src_path }}""
+    

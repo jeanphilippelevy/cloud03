@@ -1,0 +1,14 @@
+---
+
+ec2_environment: "Prod"
+aws_region: us-east-1
+
+s3_bucket_name: "my-new-bucket-001"
+s3_bucket_state: present
+s3_bucket_force: yes
+
+s3_file_src_path: "roles/s3/files/"
+
+s3_bucket_task: False
+s3_bucket_upload_task: False
+s3_bucket_list_task: False

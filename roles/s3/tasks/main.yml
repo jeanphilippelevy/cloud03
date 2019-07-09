@@ -1,0 +1,12 @@
+---
+- name: Includes s3 bucket creation task
+  include_tasks: "s3_bucket.yml"
+  when: s3_bucket_task == True
+
+- name: Includes s3 bucket upload task
+  include_tasks: "s3_bucket_upload.yml"
+  when: s3_bucket_upload_task == True
+
+- name: Includes s3 bucket list task
+  include_tasks: "s3_bucket_list.yml"
+  when: s3_bucket_list_task == True

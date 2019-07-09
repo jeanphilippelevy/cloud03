@@ -1,0 +1,7 @@
+---
+- name: Create new S3 bucket
+  s3_bucket:
+    region: "{{ aws_region }}"
+    name: "{{ s3_bucket_name }}"
+    state: "{{ s3_bucket_state }}"
+    force: "{{ s3_bucket_force }}"
