@@ -1,0 +1,10 @@
+---
+- name: Deploy one RDS db on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+
+  roles:
+    - role: rds
+      rds_create_task: True

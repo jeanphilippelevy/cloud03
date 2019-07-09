@@ -1,5 +1,5 @@
 ---
-- name: Deploy one VM on Aws
+- name: Deploy one VPC on Aws
   hosts: localhost
   connection: local
   gather_facts: false

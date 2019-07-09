@@ -1,0 +1,4 @@
+---
+- name: Includes rds creation task
+  include_tasks: "rds_create.yml"
+  when: rds_create_task == True
