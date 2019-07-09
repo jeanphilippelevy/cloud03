@@ -40,3 +40,5 @@ firewall_services_db:
 networkcnf_src: "jinja2/etc_my.cnf.d_network.cnf.j2"
 
 var_sat: disabled
+var_activationkey: ""
+var_org_id: ""
