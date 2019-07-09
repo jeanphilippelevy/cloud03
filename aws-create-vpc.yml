@@ -1,0 +1,14 @@
+---
+- name: Deploy one VM on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+
+
+  roles:
+    - role: ec2
+      aws_vpc_name: test-demo-vpc-001
+      aws_vpc_cidr_block: 192.168.150.0/24
+      aws_vpc_state: present
+      ec2_vpc_task: True

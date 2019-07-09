@@ -17,5 +17,6 @@
     rules_egress:
       - proto: "all"
         cidr_ip: "0.0.0.0/0"
+    state: "{{ aws_security_group_state }}"
   when: ec2_group_task == True
   register: secgrp

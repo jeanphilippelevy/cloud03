@@ -20,12 +20,13 @@ ec2_keypair: aws-dskp01
 aws_security_group: ds-aws-secugroup-01
 aws_security_group_id: "sg-054736dc13e58f941"
 aws_security_group_description: "New security for {{ ec2_environment }} Instances"
+aws_security_group_state: present
 
 ec2_instance_count: 1
 ec2_subnet_id: subnet-db5002f5
 
 os_type: "rhel"
 
-ec2_group_task: True
-ec2_instance_task: True
-ec2_vpc_task: True
+ec2_group_task: False
+ec2_instance_task: False
+ec2_vpc_task: False

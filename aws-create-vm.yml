@@ -5,7 +5,6 @@
   gather_facts: false
 
   vars:
-    ec2_environment: prod
     instance_name: "dummy"
 
   roles:
@@ -13,3 +12,5 @@
       instance_role: "lamp"
       os_type: "rhel"
       ami_id: "ami-000db10762d0c4c05"
+      ec2_group_task: True
+      ec2_instance_task: True
