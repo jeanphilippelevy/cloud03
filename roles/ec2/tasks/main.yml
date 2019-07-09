@@ -10,4 +10,3 @@
 - name: Includes instance creation tasks
   include_tasks: "ec2_instance.yml"
   when: ec2_instance_task == True
-  

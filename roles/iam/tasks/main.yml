@@ -1,0 +1,12 @@
+---
+- name: Includes iam group management task
+  include_tasks: "iam_group.yml"
+  when: iam_group_task == True
+
+- name: Includes iam user creation task
+  include_tasks: "iam_user.yml"
+  when: iam_user_task == True
+
+- name: Includes iam role management task
+  include_tasks: "iam_role.yml"
+  when: iam_role_task == True

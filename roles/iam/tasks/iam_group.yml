@@ -1,0 +1,6 @@
+---
+- name: Create IAM Group
+  iam_group:
+    name: "{{ iam_group_name }}"
+    managed_policy: "{{ iam_group_managed_policy }}"
+    state: "{{ iam_group_state }}"

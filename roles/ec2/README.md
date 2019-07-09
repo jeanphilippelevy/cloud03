@@ -1,2 +1,1 @@
-# azure
-
+# ec2 role

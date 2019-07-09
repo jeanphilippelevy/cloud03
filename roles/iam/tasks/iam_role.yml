@@ -1,0 +1,13 @@
+---
+- name: Create IAM role
+  iam:
+    iam_type: role
+    name: "{{ iam_role_name }}"
+    state: " {{ iam_role_state }}"
+    trust_policy:
+      Version: "{{ iam_role_trust_policy_version }}"
+      Statement:
+      - Action: "{{ iam_role_trust_policy_statement_action }}"
+        Effect: "{{ iam_role_trust_policy_statement_effect }}"
+        Principal:
+          Service: "{{ iam_role_trust_policy_statement_service }}"

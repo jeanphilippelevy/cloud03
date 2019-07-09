@@ -1,0 +1,13 @@
+---
+- name: Create IAM role on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+
+
+  roles:
+    - role: iam
+      iam_role_state: present
+      iam_role_task: True
+    

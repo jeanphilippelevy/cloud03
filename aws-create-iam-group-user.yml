@@ -1,0 +1,14 @@
+---
+- name: Create IAM group and user on Aws
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+
+
+  roles:
+    - role: iam
+      iam_group_state: present
+      iam_user_state: present
+      iam_group_task: True
+      iam_user_task: True

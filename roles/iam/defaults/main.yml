@@ -1,0 +1,24 @@
+---
+
+ec2_environment: "Prod"
+
+iam_group_name: "group01"
+iam_group_managed_policy: "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+iam_group_state: present
+
+
+iam_user_name: "iam-user-test01"
+iam_user_state: present
+iam_user_temp_pass: password
+iam_access_key_state: create
+
+iam_role_name: "iam-role-test01"
+iam_role_state: present
+iam_role_trust_policy_version: '2012-10-17'
+iam_role_trust_policy_statement_action: "sts:AssumeRole"
+iam_role_trust_policy_statement_effect: "Allow"
+iam_role_trust_policy_statement_service: "lambda.amazonaws.com"
+
+iam_group_task: False
+iam_user_task: False
+iam_role_task: False

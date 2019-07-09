@@ -1,0 +1,9 @@
+---
+- name: Create new IAM users with API key
+  iam:
+    iam_type: user
+    name: "{{ iam_user_name }}"
+    password: "{{ iam_user_temp_pass }}"
+    access_key_state: "{{ iam_access_key_state }}"
+    groups: "{{ iam_group_name }}"
+    state: "{{ iam_user_state }}"
