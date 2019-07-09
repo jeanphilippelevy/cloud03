@@ -8,5 +8,5 @@
 
   roles:
     - role: iam
-      #iam_role_state: present
+      iam_role_state: present
       iam_role_task: True
