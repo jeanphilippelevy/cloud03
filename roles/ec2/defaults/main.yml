@@ -10,8 +10,8 @@ aws_region: us-east-1
 aws_vpc_name: demo-vpc
 aws_vpc_id: vpc-56ee8e2c
 aws_vpc_cidr_block: 172.31.0.0/16
-aws_vpc_dns_hostnames: False
-aws_vpc_dns_support: False
+aws_vpc_dns_hostnames: True
+aws_vpc_dns_support: True
 aws_vpc_state: present
 
 ec2_instance_type: t2.small
