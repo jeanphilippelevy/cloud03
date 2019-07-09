@@ -21,7 +21,7 @@ aws_security_group_id: "sg-054736dc13e58f941"
 aws_security_group_description: "New security for {{ ec2_environment }} Instances"
 
 ec2_instance_count: 1
-ec2_subnet_id: subnet-9e4414c2
+ec2_subnet_id: subnet-db5002f5
 
 os_type: "rhel"
 
