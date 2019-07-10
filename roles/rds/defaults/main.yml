@@ -5,7 +5,7 @@ aws_region: us-east-1
 
 rds_command: "create"
 rds_instance_name: "my-rds-db01"
-rds_db_engine: "MySql"
+rds_db_engine: "MySQL"
 rds_size: 10
 rds_instance_type: "db.m1.small"
 rds_tag_env: "dev"
