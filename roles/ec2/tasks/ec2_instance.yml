@@ -8,6 +8,7 @@
     image: "{{ ec2_ami_id }}"
     vpc_subnet_id: "{{ ec2_subnet_id }}"
     assign_public_ip: yes
+    state: "{{ ec2_instance_state }}"
     wait: True
     wait_timeout: 600
     instance_tags:

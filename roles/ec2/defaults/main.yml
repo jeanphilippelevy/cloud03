@@ -16,6 +16,7 @@ aws_vpc_state: present
 
 ec2_instance_type: t2.small
 ec2_keypair: aws-dskp01
+ec2_instance_state: present
 
 aws_security_group: ds-aws-secugroup-01
 aws_security_group_id: "sg-054736dc13e58f941"
