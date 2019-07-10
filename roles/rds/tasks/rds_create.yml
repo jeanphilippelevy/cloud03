@@ -6,9 +6,9 @@
     instance_name: "{{ rds_instance_name }}"
     db_engine: "{{ rds_db_engine }}"
     size: "{{ rds_size }}"
-    instance_type: "{ rds_instance_type }"
-    username: "{ rds_username }"
-    password: "{ rds_password }"
+    instance_type: "{{ rds_instance_type }}"
+    username: "{{ rds_username }}"
+    password: "{{ rds_password }}"
     tags:
       Environment: "{{ rds_tag_env }}"
       Application: "{{ rds_tag_app }}"
