@@ -7,7 +7,7 @@ rds_command: "create"
 rds_instance_name: "my-rds-db01"
 rds_db_engine: "MySQL"
 rds_size: 10
-rds_instance_type: "db.m1.small"
+rds_instance_type: "db.m4.large"
 rds_tag_env: "dev"
 rds_tag_app: "app1"
 rds_username: "user1"
