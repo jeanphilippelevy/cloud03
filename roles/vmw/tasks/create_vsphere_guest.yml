@@ -3,6 +3,7 @@
     #vcenter_hostname: vcenter.mydomain.local
     #username: myuser
     #password: mypass
+    validate_certs: no
     guest: "{{ var_vmname }}"
     state: "{{ var_state }}"
     vm_extra_config:
