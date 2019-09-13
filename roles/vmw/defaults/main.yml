@@ -6,7 +6,6 @@ var_state: "powered_on"
 var_disk_size_gb: 20
 var_disk_type: "thin"
 var_disk_datastore: "Datastore"
-var_disk_datastore: "DC01/Test"
 var_nic1_type: "vmxnet3"
 var_nic1_network: "VM Network"
 var_nic1_network_type: "standard"
