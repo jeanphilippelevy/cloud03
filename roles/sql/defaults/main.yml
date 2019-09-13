@@ -22,3 +22,7 @@ src_querydb_sql: "https://raw.githubusercontent.com/mheslin/SQL-Server---RHEL-BM
 tgt_querydb_sql: "{{ path_home }}/Query_DB.sql"
 src_dropdb_sql: "https://raw.githubusercontent.com/mheslin/SQL-Server---RHEL-BM-Demo/master/Drop_DB.sql"
 tgt_dropdb_sql: "{{ path_home }}/Drop_DB.sql"
+
+var_sat: disabled
+var_activationkey: ""
+var_org_id: ""
