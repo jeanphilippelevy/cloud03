@@ -10,4 +10,4 @@
   roles:
     - role: vmw
       #instance_role: "undefined"
-      create_vsphere_guest: True
+      create_vmware_guest_task: True

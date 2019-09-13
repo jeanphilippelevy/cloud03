@@ -1,5 +1,5 @@
 ---
-create_vsphere_guest_task: True
+create_vmware_guest_task: True
 
 var_vmname: "{{ instance_name }}"
 var_state: "powered_on"
@@ -11,9 +11,9 @@ var_nic1_network: "VM Network"
 var_nic1_network_type: "standard"
 var_vm_hw_memory_mb: 4096
 var_vm_hw_num_cpus: 2
-var_vm_hw_osid: "RHEL 7"
+var_vm_hw_num_cpu_cores_per_socket: 2
+var_vm_template: "RHEL 7"
 var_vm_hw_scsi: "paravirtual"
-var_vm_hw_scsi: "buslogic"
 var_datacenter: "DC01"
 #var_esx_hostname: "vsphere1.localdomain"
 var_esx_hostname: "192.168.0.51"
