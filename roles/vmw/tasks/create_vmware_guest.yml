@@ -4,6 +4,7 @@
     hostname: "{{ var_esx_hostname }}"
     validate_certs: no
     folder: "{{ var_vm_folder }}"
+    cluster: "{{ var_cluster }}"
     name: "{{ var_vmname }}"
     state: "{{ var_state }}"
     template: "{{ var_vm_template }}"
