@@ -12,7 +12,8 @@ var_nic1_network_type: "standard"
 var_vm_hw_memory_mb: 4096
 var_vm_hw_num_cpus: 2
 var_vm_hw_osid: "RHEL 7"
-#var_vm_hw_scsi: "paravirtual"
+var_vm_hw_scsi: "paravirtual"
+var_vm_hw_scsi: "buslogic"
 var_datacenter: "DC01"
 #var_esx_hostname: "vsphere1.localdomain"
 var_esx_hostname: "192.168.0.51"
