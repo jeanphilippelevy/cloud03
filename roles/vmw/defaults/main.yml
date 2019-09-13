@@ -1,7 +1,7 @@
 ---
 create_vsphere_guest_task: True
 
-var_vmname: "testvmw01"
+var_vmname: "{{ instance_name }}"
 var_state: "powered_on"
 var_disk_size_gb: 20
 var_disk_type: "thin"
@@ -16,3 +16,4 @@ var_vm_hw_osid: "RHEL 7"
 var_vm_hw_scsi: "paravirtual"
 var_datacenter: "DC01"
 var_esx_hostname: "vsphere1.localdomain"
+var_vm_folder: "DC01/Test"
