@@ -1,0 +1,18 @@
+---
+create_vsphere_guest_task: True
+
+var_vmname: "testvmw01"
+var_state: "powered_on"
+var_disk_size_gb: 20
+var_disk_type: "thin"
+var_disk_datastore: "Datastore"
+var_disk_datastore: "DC01/Test"
+var_nic1_type: "vmxnet3"
+var_nic1_network: "VM Network"
+var_nic1_network_type: "standard"
+var_vm_hw_memory_mb: 4096
+var_vm_hw_num_cpus: 2
+var_vm_hw_osid: "RHEL 7"
+var_vm_hw_scsi: "paravirtual"
+var_datacenter: "DC01"
+var_esx_hostname: "vsphere1.localdomain"

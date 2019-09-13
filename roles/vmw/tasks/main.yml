@@ -1,0 +1,4 @@
+---
+- name: Includes vsphere guest task
+  include_tasks: "create_vsphere_guest.yml"
+  when: create_vsphere_guest_task == True

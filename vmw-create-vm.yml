@@ -1,0 +1,13 @@
+---
+- name: Deploy one VM on Vmware
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    instance_name: "dummy"
+
+  roles:
+    - role: vmw
+      #instance_role: "undefined"
+      create_vsphere_guest: True
