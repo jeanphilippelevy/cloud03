@@ -1,7 +1,7 @@
 ---
 - name: Deploy one VM on Vmware
   hosts: localhost
-  connection: local
+  #connection: local
   gather_facts: false
 
   vars:
