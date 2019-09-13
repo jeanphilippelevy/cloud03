@@ -14,8 +14,8 @@ var_vm_hw_num_cpus: 2
 var_vm_hw_num_cpu_cores_per_socket: 2
 var_vm_template: "RHEL 7"
 var_vm_hw_scsi: "paravirtual"
-#var_datacenter: "DC01"
+var_datacenter: "DC01"
 #var_esx_hostname: "vsphere1.localdomain"
 var_esx_hostname: "192.168.0.51"
-var_vm_folder: "DC01"
+var_vm_folder: "Test"
 var_cluster: "Cluster01"
