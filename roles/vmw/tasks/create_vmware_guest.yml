@@ -3,7 +3,7 @@
   vmware_guest:
     #hostname: "{{ var_esx_hostname }}"
     validate_certs: no
-    #datacenter: "{{ var_datacenter }}"
+    datacenter: "{{ var_datacenter }}"
     cluster: "{{ var_cluster }}"
     folder: "{{ var_vm_folder }}"
     name: "{{ var_vmname }}"
