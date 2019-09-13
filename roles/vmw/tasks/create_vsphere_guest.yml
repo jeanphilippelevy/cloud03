@@ -9,8 +9,8 @@
     vm_extra_config:
       vcpu.hotadd: yes
       mem.hotadd:  yes
-      notes: This is a test VM
-      folder: "{{ var_vm_folder }}"
+      #notes: This is a test VM
+      #folder: "{{ var_vm_folder }}"
     vm_disk:
       disk1:
         size_gb: "{{ var_disk_size_gb }}"
