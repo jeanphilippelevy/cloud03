@@ -29,7 +29,7 @@
       memory_mb: "{{ var_vm_hw_memory_mb }}"
       num_cpus: "{{ var_vm_hw_num_cpus }}"
       osid: "{{ var_vm_hw_osid }}"
-      scsi: "{{ var_vm_hw_scsi }}"
+      #scsi: "{{ var_vm_hw_scsi }}"
     esxi:
       datacenter: "{{ var_datacenter }}"
       hostname: "{{ var_esx_hostname }}"
