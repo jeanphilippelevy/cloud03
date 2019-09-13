@@ -123,6 +123,6 @@
 
 - name: Dump querycommand.txt
   lineinfile:
-    path: /home/cloud-user/querycommand.txt
+    path: "{{ path_home }}/querycommand.txt"
     line: "/opt/mssql-tools/bin/sqlcmd -U SA -P '{{ mssql_sa_password }}' -i {{ tgt_querydb_sql }}"
     create: yes

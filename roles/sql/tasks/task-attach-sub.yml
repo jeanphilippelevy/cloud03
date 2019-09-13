@@ -12,6 +12,6 @@
     - name: Enregistrement a access red hat avec la cle d'activation
       redhat_subscription:
         state: present
-        activationkey: "clouddaykey1"
-        org_id: "5318211"
+        activationkey: "{{ var_activationkey }}"
+        org_id: "{{  var_org_id }}"
       ignore_errors: True
