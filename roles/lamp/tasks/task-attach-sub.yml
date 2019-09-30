@@ -15,3 +15,6 @@
         activationkey: "{{ var_activationkey }}"
         org_id: "{{  var_org_id }}"
       ignore_errors: True
+
+    - name: Desactivation repo
+      shell: "subscription-manager repos --disable=rhel-7-server-htb-rpms"
