@@ -14,5 +14,13 @@
       ami_id: "ami-000db10762d0c4c05"
       ec2_group_task: True
       ec2_instance_task: True
-      
-    - role: attach-sub
+
+- name: Attach Sub on instance
+  hosts: "{{ instance_name}}"
+  gather_facts: false
+
+  vars:
+    instance_name: "dummy"
+    
+  roles:
+    - role:  attach-sub
