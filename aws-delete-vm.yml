@@ -15,4 +15,4 @@
       ec2_group_task: True
       ec2_instance_task: True
       ec2_instance_state: absent
-      instance_id: {{ hostvars['gobuilder'].ec2_id }}
+      instance_id: "{{ hostvars[gobuilder].ec2_id }}"
