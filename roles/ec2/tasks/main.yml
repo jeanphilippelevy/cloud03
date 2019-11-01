@@ -1,4 +1,8 @@
 ---
+- name: Display instance_id
+  debug:
+    var: instance_id
+
 - name: Includes VPC check task
   include_tasks: "ec2_vpc.yml"
   when: ec2_vpc_task == True
