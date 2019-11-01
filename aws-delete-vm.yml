@@ -6,7 +6,7 @@
 
   vars:
     instance_name: "dummy"
-    
+
   roles:
     - role: ec2
       instance_role: "lamp"
@@ -15,4 +15,4 @@
       ec2_group_task: True
       ec2_instance_task: True
       ec2_instance_state: absent
-      instance_id: hostvars[{{ instance_name }}].ec2_id
+      instance_id: {{ hostvars[ instance_name ].ec2_id }}
