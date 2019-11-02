@@ -10,8 +10,8 @@
   tasks:
     - name: Terminate instance {{ instance_name }}
       ec2_instance:
-        region: us-east-1c
-        state: terminated
+        region: us-east-1
+        state: absent
         tags:
           Name: "{{ instance_name }}"
 
