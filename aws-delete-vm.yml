@@ -12,7 +12,7 @@
       ec2_instance:
         aws_region: us-east-1
         state: terminated
-        tags:
+        instance_tags:
           Name: "{{ instance_name }}"
 
   #roles:
