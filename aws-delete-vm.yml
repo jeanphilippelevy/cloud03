@@ -12,8 +12,8 @@
       ec2_instance:
         region: us-east-1
         state: absent
-        tags:
-          Name: "{{ instance_name }}"
+        filters:
+          tag:Name: "{{ instance_name }}"
 
   #roles:
   #  - role: ec2
