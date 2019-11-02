@@ -1,16 +1,4 @@
 ---
-- name: Get ec2 id
-  hosts: "{{ instance_name }}"
-  gather_facts: false
-
-  vars:
-    instance_name: "dummy"
-
-  tasks:
-    - name: get ec2 id value
-      set_fact:
-        ec2_id_value: "{{ hostvars[inventory_hostname].ec2_id }}"
-
 - name: Terminate one VM on Aws
   hosts: localhost
   connection: local
@@ -27,4 +15,4 @@
       ec2_group_task: True
       ec2_instance_task: True
       ec2_instance_state: absent
-      instance_id: "{{ ec2_id_value }}"
+      instance_id: "{{ hostvars['gobuilder']['ec2_id'] }}"
