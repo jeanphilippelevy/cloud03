@@ -1,5 +1,5 @@
 ---
-- name: Terminate one VM on Aws
+- name: Terminate instance on Aws
   hosts: localhost
   connection: local
   gather_facts: false
@@ -7,12 +7,18 @@
   vars:
     instance_name: "dummy"
 
-  roles:
-    - role: ec2
-      instance_role: "lamp"
-      os_type: "rhel"
-      ami_id: "ami-000db10762d0c4c05"
-      ec2_group_task: True
-      ec2_instance_task: True
-      ec2_instance_state: absent
-      instance_ids: "{{ hostvars['gobuilder']['ec2_id'] }}"
+  tasks:
+    - name: Terminate instance {{ instance_name }}
+      ec2_instance:
+        name: "{{ instance_name }}"
+        state: terminated
+
+  #roles:
+  #  - role: ec2
+  #    instance_role: "lamp"
+  #    os_type: "rhel"
+  #    ami_id: "ami-000db10762d0c4c05"
+  #    ec2_group_task: True
+  #    ec2_instance_task: True
+  #    ec2_instance_state: absent
+  #    instance_ids: "{{ hostvars['gobuilder']['ec2_id'] }}"
