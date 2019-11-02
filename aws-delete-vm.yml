@@ -11,6 +11,7 @@
     - name: Terminate instance {{ instance_name }}
       ec2_instance:
         name: "{{ instance_name }}"
+        aws_region: us-east-1
         state: terminated
 
   #roles:
