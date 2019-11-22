@@ -1,12 +1,13 @@
 ---
-- name: Test for OSP flavor creation
+- name: Test os roles
   hosts: localhost
   gather_facts: no
 
   tasks:
 
   - block:
-      - name: create osp flavor
+      - name: gather facts
         include_role:
-          name: osp/osp-flavor
-          tasks_from: create-osp-flavor
+          name: osp/osp-facts
+          tasks_from: get-osp-facts
+    when: role_osp_facts == 'true'
