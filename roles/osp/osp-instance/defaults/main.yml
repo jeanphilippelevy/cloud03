@@ -1,0 +1,19 @@
+---
+cloud_provider_name: "ospcloud"
+osp_instance_name: "dummy-osp-instance-name"
+osp_instance_image: "rhel-guest"
+osp_instance_group: "group-test1"
+osp_instance_deployment: "group-deployment1"
+osp_instance_flavor: "m1.medium"
+osp_security_group_name: "dummy-secugroupname"
+osp_key_name: "ansible-ssh-osp-keypair"
+osp_int_network: "int_network"
+osp_ext_network: "ext_network"
+osp_floating_ip_state: "present"
+
+osp_instance_userdata: "|
+  #!/bin/bash
+  curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+  cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+  curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+  cp /tmp/internal.repo /etc/yum.repos.d/internal.repo"

@@ -1,0 +1,5 @@
+---
+osp_instance_name: db
+osp_instance_group: appdbs
+osp_instance_deployment: dev
+osp_security_group_name: db_servers

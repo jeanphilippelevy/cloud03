@@ -1,0 +1,5 @@
+---
+osp_instance_name: frontend
+osp_instance_group: frontends
+osp_instance_deployment: dev
+osp_security_group_name: frontend_servers

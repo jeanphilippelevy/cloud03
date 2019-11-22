@@ -1,0 +1,3 @@
+---
+cloud_provider_name: "ospcloud"
+cloud_region_name: "RegionOne"

@@ -1,0 +1,16 @@
+---
+- os_security_group:
+    cloud: "{{ cloud_provider_name }}"
+    state: "{{ osp_secugroup_state }}"
+    name: "{{ osp_secugroup_name }}"
+    description: "{{ osp_secugroup_descr }}"
+
+- os_security_group_rule:
+    cloud: "{{ cloud_provider_name }}"
+    security_group: "{{ osp_secugroup_name }}"
+    protocol: "{{ osp_secugrouprule_proto }}"
+    port_range_min: "{{ item.port }}"
+    port_range_max: "{{ item.port }}"
+    remote_ip_prefix: "{{ item.ip_prefix }}"
+  with_items: "{{ osp_secugrouprule_list }}"
+  

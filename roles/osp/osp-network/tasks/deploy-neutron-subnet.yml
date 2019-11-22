@@ -1,0 +1,17 @@
+---
+- os_subnet:
+    cloud: "{{ cloud_provider_name }}"
+    state: "{{ subnet_state }}"
+    network_name: "{{ network_name }}"
+    name: "{{ subnet_name }}"
+    cidr: "{{ subnet_cidr }}"
+    dns_nameservers:
+      - "{{ subnet_dns_nameserver1 }}"
+      - "{{ subnet_dns_nameserver2 }}"
+    host_routes:
+       - destination: "{{ host_routes_destination1 }}"
+         nexthop: "{{ host_routes_nexthop1 }}"
+       - destination: "{{ host_routes_destination2 }}"
+         nexthop: "{{ host_routes_nexthop2 }}"
+  tags: subnet
+

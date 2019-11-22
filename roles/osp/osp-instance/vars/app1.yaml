@@ -1,0 +1,5 @@
+---
+osp_instance_name: app1
+osp_instance_group: apps
+osp_instance_deployment: dev
+osp_security_group_name: app_servers

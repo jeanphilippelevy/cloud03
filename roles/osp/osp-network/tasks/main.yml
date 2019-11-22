@@ -1,0 +1,7 @@
+---
+- include_tasks: deploy-neutron-network.yml
+  when: network_object_type == "network"
+- include_tasks: deploy-neutron-subnet.yml
+  when: network_object_type == "subnet"
+- include_tasks: deploy-neutron-router.yml
+  when: network_object_type == "router"

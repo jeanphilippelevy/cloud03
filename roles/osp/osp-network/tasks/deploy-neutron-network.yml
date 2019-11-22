@@ -1,0 +1,8 @@
+---
+- os_network:
+    cloud: "{{ cloud_provider_name }}"
+    state: "{{ network_state }}"
+    name: "{{ network_name }}"
+    external: "{{ network_external }}"
+  tags: network
+

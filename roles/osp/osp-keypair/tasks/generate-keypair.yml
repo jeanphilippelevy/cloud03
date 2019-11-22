@@ -1,0 +1,11 @@
+---
+- name: Generate key files
+  user:
+    name: "{{ key_user_name }}"
+    generate_ssh_key: yes
+    ssh_key_file: "{{ ssh_key_file_path }}"
+- os_keypair:
+    cloud: "{{ cloud_provider_name }}"
+    state: "{{ osp_keypair_state}}"
+    name: "{{ osp_keypair_name }}"
+    public_key_file: "{{ public_key_file_path }}"

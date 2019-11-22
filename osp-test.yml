@@ -1,0 +1,12 @@
+---
+- name: Test for OSP flavor creation
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+
+  - block:
+      - name: create osp flavor
+        include_role:
+          name: osp/osp-flavor
+          tasks_from: create-osp-flavor

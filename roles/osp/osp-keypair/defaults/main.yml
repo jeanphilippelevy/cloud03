@@ -1,0 +1,11 @@
+---
+cloud_provider_name: "ospcloud"
+#key_user_name: "{{ ansible_env.USER }}"
+key_user_name: "root"
+ssh_key_file_path: ".ssh/test_id_rsa"
+
+osp_keypair_state: "present"
+osp_keypair_name:  "dummy-keypair-name"
+
+#public_key_file_path: "{{ ansible_env.HOME }}/.ssh/test_id_rsa.pub"
+public_key_file_path: "/root/.ssh/test_id_rsa.pub"

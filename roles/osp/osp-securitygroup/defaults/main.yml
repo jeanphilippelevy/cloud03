@@ -1,0 +1,10 @@
+---
+cloud_provider_name: "ospcloud"
+osp_secugroup_state: "present"
+osp_secugroup_name: "dummy-secugroup-name"
+osp_secugroup_descr: "dummy-secugroup-descr"
+osp_secugrouprule_proto: "tcp"
+
+osp_secugrouprule_list:
+  - { port: '8080', ip_prefix: '0.0.0.0/0' }
+  - { port: '22', ip_prefix: '0.0.0.0/0' }

@@ -1,0 +1,8 @@
+---
+cloud_provider_name: "DS-ops-srv02-creds"
+
+osp_flavor_state: "present"
+osp_flavor_name: "dummy-flavor-name"
+osp_flavor_ram: "2048"
+osp_flavor_vcpus: "1"
+osp_flavor_disk: "10"

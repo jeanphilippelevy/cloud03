@@ -1,0 +1,11 @@
+---
+- os_router:
+    cloud: "{{ cloud_provider_name }}"
+    state: "{{ router_state }}"
+    name: "{{ router_name }}"
+    network: "{{ ext_net }}"
+    external_fixed_ips:
+      - subnet: "{{ ext_sub }}"
+    interfaces:
+      - "{{ int_sub }}"
+  tags: router
