@@ -24,4 +24,4 @@
         include_role:
           name: osp/osp-instance
           tasks_from: create-osp-instance
-    when: role_osp_flavor == 'true'
+    when: role_osp_instance == 'true'
