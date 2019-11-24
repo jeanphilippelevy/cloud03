@@ -3,5 +3,6 @@
     project: "{{ osp_project_name }}"
     state: "{{ network_state }}"
     name: "{{ network_name }}"
+    provider_network_type: "{{ network_provider_network_type }}"
     external: "{{ network_external }}"
   tags: network

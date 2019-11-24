@@ -6,6 +6,7 @@ network_object_type: "all"
 network_state: "present"
 network_name: "priv_net"
 network_external: "false"
+network_provider_network_type: "vxlan"
 
 subnet_name: "priv_net_subnet"
 subnet_state: "present"
