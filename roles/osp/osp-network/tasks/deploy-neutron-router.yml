@@ -1,6 +1,6 @@
 ---
 - name: Create Network
-  shell: "source /root/overcloudrc; openstack --insecure router create --project {{ osp_project_name }} {{ router_name }}; openstack --insecure router set --project {{ osp_project_name }} {{ router_name }} --external-gateway {{ ext_net }}; openstack --insecure router add subnet --project {{ osp_project_name }} {{ router_name }} {{ ext_sub }}"
+  shell: "source /root/overcloudrc; openstack --insecure router create --project {{ osp_project_name }} {{ router_name }}; openstack --insecure router set {{ router_name }} --external-gateway {{ ext_net }}; openstack --insecure router add subnet {{ router_name }} {{ ext_sub }}"
   args:
     chdir: /root
 
