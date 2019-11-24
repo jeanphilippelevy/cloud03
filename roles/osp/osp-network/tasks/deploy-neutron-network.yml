@@ -5,5 +5,6 @@
     name: "{{ network_name }}"
     provider_network_type: "{{ network_provider_network_type }}"
     provider_segmentation_id: "{{ network_provider_segmentation_id}}"
+    dns_domain: "{{ network_dns_domain }}"
     external: "{{ network_external }}"
   tags: network

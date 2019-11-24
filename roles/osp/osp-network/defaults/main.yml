@@ -8,6 +8,7 @@ network_name: "priv_net"
 network_external: "false"
 network_provider_network_type: "vxlan"
 network_provider_segmentation_id: "50"
+network_dns_domain: "8.8.8.8"
 
 subnet_name: "priv_net_subnet"
 subnet_state: "present"
