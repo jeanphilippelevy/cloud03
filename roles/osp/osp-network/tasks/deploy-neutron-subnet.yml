@@ -1,10 +1,15 @@
 ---
-- os_subnet:
-    project: "{{ osp_project_name }}"
-    state: "{{ subnet_state }}"
-    network_name: "{{ network_name }}"
-    name: "{{ subnet_name }}"
-    cidr: "{{ subnet_cidr }}"
+- name: Create Network
+  shell: "source /root/overcloudrc; openstack --insecure subnet create --project {{ osp_project_name }} --network {{ network_name }} --subnet-range {{ subnet_cidr }} --dhcp {{ subnet_name }}"
+  args:
+    chdir: /root
+
+#- os_subnet:
+#    project: "{{ osp_project_name }}"
+#    state: "{{ subnet_state }}"
+#    network_name: "{{ network_name }}"
+#    name: "{{ subnet_name }}"
+#    cidr: "{{ subnet_cidr }}"
     #dns_nameservers:
     #  - "{{ subnet_dns_nameserver1 }}"
     #  - "{{ subnet_dns_nameserver2 }}"
@@ -13,4 +18,4 @@
     #     nexthop: "{{ host_routes_nexthop1 }}"
     #   - destination: "{{ host_routes_destination2 }}"
     #     nexthop: "{{ host_routes_nexthop2 }}"
-  tags: subnet
+#  tags: subnet

@@ -26,7 +26,7 @@ router_state: "present"
 router_name: "project_internal_router"
 
 ext_net: "public_flat"
-int_net: "priv_net"
+int_net: "priv_net_1"
 
 ext_sub: "public_flat_subnet"
-int_sub: "priv_net_subnet"
+int_sub: "priv_net_subnet_1"
