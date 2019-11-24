@@ -1,7 +1,6 @@
 ---
 - os_network:
-    auth:
-      project_name: "{{ osp_project_name }}"
+    project: "{{ osp_project_name }}"
     state: "{{ network_state }}"
     name: "{{ network_name }}"
     external: "{{ network_external }}"

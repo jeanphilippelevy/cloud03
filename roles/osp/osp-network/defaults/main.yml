@@ -4,10 +4,10 @@ osp_project_name: "admin"
 network_object_type: "all"
 
 network_state: "present"
-network_name: "priv_net_1"
+network_name: "priv_net"
 network_external: "false"
 
-subnet_name: "priv_net_subnet_1"
+subnet_name: "priv_net_subnet"
 subnet_state: "present"
 subnet_cidr: "192.168.20.0/24"
 #subnet_dns_nameserver1: "0.0.0.0"

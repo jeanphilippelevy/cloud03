@@ -1,7 +1,6 @@
 ---
 - os_subnet:
-    auth:
-      project_name: "{{ osp_project_name }}"
+    project: "{{ osp_project_name }}"
     state: "{{ subnet_state }}"
     network_name: "{{ network_name }}"
     name: "{{ subnet_name }}"

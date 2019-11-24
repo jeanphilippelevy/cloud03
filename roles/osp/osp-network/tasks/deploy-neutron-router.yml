@@ -1,7 +1,6 @@
 ---
 - os_router:
-    auth:
-      project_name: "{{ osp_project_name }}"
+    project: "{{ osp_project_name }}"
     state: "{{ router_state }}"
     name: "{{ router_name }}"
     network: "{{ ext_net }}"
