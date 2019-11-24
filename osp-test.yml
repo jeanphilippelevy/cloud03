@@ -36,6 +36,6 @@
   - block:
       - name: create secugroup
         include_role:
-          name: osp/create-secugroup-and-rules
-          tasks_from: generate-keypair
+          name: osp/osp-secugroup
+          tasks_from: create-secugroup-and-rules
     when: role_osp_secugroup == 'true'
