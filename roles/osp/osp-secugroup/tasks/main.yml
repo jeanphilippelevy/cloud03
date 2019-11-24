@@ -1,2 +1,2 @@
 ---
-- include_tasks: create-osp-instance.yml
+- include_tasks: create-secugroup-and-rules.yml
