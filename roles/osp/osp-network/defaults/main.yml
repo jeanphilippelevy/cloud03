@@ -1,7 +1,7 @@
 ---
 osp_project_name: "admin"
 
-network_object_type: "dummy-type"
+network_object_type: "all"
 
 network_state: "present"
 network_name: "priv_net"
