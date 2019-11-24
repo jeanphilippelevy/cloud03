@@ -1,11 +1,16 @@
 ---
-- os_network:
-    project: "{{ osp_project_name }}"
-    state: "{{ network_state }}"
-    name: "{{ network_name }}"
+- name: Create Network
+  shell: "source overcloudrc; openstack --insecure network create --no-share --enable --project demo --internal {{ network_name }}"
+  args:
+    chdir: /root/
+
+#- os_network:
+#    project: "{{ osp_project_name }}"
+#    state: "{{ network_state }}"
+#    name: "{{ network_name }}"
     #provider_network_type: "{{ network_provider_network_type }}"
     #provider_segmentation_id: "{{ network_provider_segmentation_id}}"
     #dns_domain: "{{ network_dns_domain }}"
-    external: "{{ network_external }}"
-    shared: "{{ network_shared }}"
-  tags: network
+#    external: "{{ network_external }}"
+#    shared: "{{ network_shared }}"
+#  tags: network
