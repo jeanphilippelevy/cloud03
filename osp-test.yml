@@ -25,3 +25,10 @@
           name: osp/osp-instance
           tasks_from: create-osp-instance
     when: role_osp_instance == 'true'
+
+  - block:
+      - name: create keypair
+        include_role:
+          name: osp/osp-keypair
+          tasks_from: generate-keypair
+    when: role_osp_keypair == 'true'
