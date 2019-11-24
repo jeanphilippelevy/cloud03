@@ -18,3 +18,10 @@
           name: osp/osp-flavor
           tasks_from: create-osp-flavor
     when: role_osp_flavor == 'true'
+
+  - block:
+      - name: create instance
+        include_role:
+          name: osp/osp-instance
+          tasks_from: create-osp-instance
+    when: role_osp_flavor == 'true'
