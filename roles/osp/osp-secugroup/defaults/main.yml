@@ -1,0 +1,5 @@
+---
+osp_project_name: "admin"
+
+osp_security_group_name: "test-secugroup-01"
+osp_security_group_state: "present"

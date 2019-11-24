@@ -1,0 +1,45 @@
+---
+- name: Create a security group
+  os_server:
+    auth:
+      project_name: "{{ osp_project_name }}"
+    name: "{{ osp_security_group_name }}"
+    state: "{{ osp_security_group_state }}"
+
+- name: Create icmp rule
+  os_security_group_rule:
+    auth:
+      project_name: "{{ osp_project_name }}"
+    security_group: "{{ osp_security_group_name }}"
+    protocol: icmp
+    remote_ip_prefix: 0.0.0.0/0
+
+- name: Create ssh rule
+  os_security_group_rule:
+    auth:
+      project_name: "{{ osp_project_name }}"
+    security_group: "{{ osp_security_group_name }}"
+    protocol: ssh
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+
+- name: Create http rule
+  os_security_group_rule:
+    auth:
+      project_name: "{{ osp_project_name }}"
+    security_group: "{{ osp_security_group_name }}"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+
+- name: Create https rule
+  os_security_group_rule:
+    auth:
+      project_name: "{{ osp_project_name }}"
+    security_group: "{{ osp_security_group_name }}"
+    protocol: tcp
+    port_range_min: 443
+    port_range_max: 443
+    remote_ip_prefix: 0.0.0.0/0

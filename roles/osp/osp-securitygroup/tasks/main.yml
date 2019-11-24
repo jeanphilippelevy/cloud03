@@ -1,2 +1,2 @@
 ---
-- include_tasks: create-osp-secugroup.yml
+- include_tasks: create-secugroup-and-rules.yml
