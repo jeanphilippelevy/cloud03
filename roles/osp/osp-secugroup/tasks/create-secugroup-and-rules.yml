@@ -1,6 +1,6 @@
 ---
 - name: Create a security group
-  os_server:
+  os_security_group:
     auth:
       project_name: "{{ osp_project_name }}"
     name: "{{ osp_security_group_name }}"
