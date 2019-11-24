@@ -1,11 +1,17 @@
 ---
-- os_router:
-    project: "{{ osp_project_name }}"
-    state: "{{ router_state }}"
-    name: "{{ router_name }}"
-    network: "{{ ext_net }}"
-    external_fixed_ips:
-      - subnet: "{{ ext_sub }}"
-    interfaces:
-      - "{{ int_sub }}"
-  tags: router
+- name: Create Network
+  shell: "source /root/overcloudrc; openstack --insecure router create --project {{ osp_project_name }} {{ router_name }}; openstack --insecure router set --project {{ osp_project_name }} {{ router_name }} --external-gateway {{ ext_net }}; openstack --insecure router add subnet --project {{ osp_project_name }} {{ router_name }} {{ ext_sub }}"
+  args:
+    chdir: /root
+
+
+#- os_router:
+#    project: "{{ osp_project_name }}"
+#    state: "{{ router_state }}"
+#    name: "{{ router_name }}"
+#    network: "{{ ext_net }}"
+#    external_fixed_ips:
+#      - subnet: "{{ ext_sub }}"
+#    interfaces:
+#      - "{{ int_sub }}"
+#  tags: router
