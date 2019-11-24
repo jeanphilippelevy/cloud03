@@ -1,4 +1,6 @@
 ---
+osp_project_name: "admin"
+
 osp_instance_name: "dummy-osp-instance-name"
 osp_instance_image: "rhel7"
 osp_instance_group: "group-test-01"
