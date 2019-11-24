@@ -4,5 +4,6 @@
     state: "{{ network_state }}"
     name: "{{ network_name }}"
     provider_network_type: "{{ network_provider_network_type }}"
+    provider_segmentation_id: "{{ network_provider_segmentation_id}}"
     external: "{{ network_external }}"
   tags: network
