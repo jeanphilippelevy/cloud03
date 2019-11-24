@@ -1,6 +1,7 @@
 ---
 - os_router:
-    cloud: "{{ cloud_provider_name }}"
+    auth:
+      project_name: "{{ osp_project_name }}"
     state: "{{ router_state }}"
     name: "{{ router_name }}"
     network: "{{ ext_net }}"

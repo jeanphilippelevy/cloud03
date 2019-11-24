@@ -1,8 +1,8 @@
 ---
 - os_network:
-    cloud: "{{ cloud_provider_name }}"
+    auth:
+      project_name: "{{ osp_project_name }}"
     state: "{{ network_state }}"
     name: "{{ network_name }}"
     external: "{{ network_external }}"
   tags: network
-

@@ -39,3 +39,10 @@
           name: osp/osp-secugroup
           tasks_from: create-secugroup-and-rules
     when: role_osp_secugroup == 'true'
+
+  - block:
+      - name: create project network
+        include_role:
+          name: osp/osp-network
+          #tasks_from: main
+    when: role_osp_network == 'true'
