@@ -1,5 +1,4 @@
 ---
-cloud_provider_name: "ospcloud"
 #key_user_name: "{{ ansible_env.USER }}"
 key_user_name: "root"
 ssh_key_file_path: ".ssh/test_id_rsa"
