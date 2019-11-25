@@ -1,8 +1,8 @@
 ---
 - name: Create Network
   shell: "source /root/overcloudrc; openstack --insecure subnet create --project {{ osp_project_name }} --network {{ network_name }} --subnet-range {{ subnet_cidr }} --dhcp {{ subnet_name }}"
-  args:
-    chdir: /root
+  #args:
+  #  chdir: /root
 
 #- os_subnet:
 #    project: "{{ osp_project_name }}"

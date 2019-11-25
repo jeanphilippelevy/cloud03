@@ -1,8 +1,8 @@
 ---
 - name: Create Network
   shell: "source /root/overcloudrc; openstack --insecure network create --no-share --enable --project {{ osp_project_name }} --internal {{ network_name }}"
-  args:
-    chdir: /root
+  #args:
+  #  chdir: /root
 
 #- os_network:
 #    project: "{{ osp_project_name }}"
