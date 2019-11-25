@@ -5,6 +5,7 @@
     name: "{{ osp_user_name }}"
     password: "{{ osp_user_password }}"
     default_project: "{{ osp_project_name }}"
+    domain: "{{ osp_domain }}"
 
 - name: Add role to user
   os_user_role:

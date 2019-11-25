@@ -2,3 +2,4 @@
 osp_project_type: "admin"
 osp_project_state: "present"
 osp_project_name: "demo-project-01"
+osp_domain: "default"
