@@ -1,7 +1,15 @@
 ---
-- name: Test osp roles
+- name: Launch osp roles
   hosts: localhost
   gather_facts: no
+
+  vars:
+    role_osp_facts: 'false'
+    role_osp_flavor: 'false'
+    role_osp_keypair: 'false'
+    role_osp_secugroup: 'false'
+    role_osp_network: 'false'
+    role_osp_instance: 'false'
 
   tasks:
 
@@ -20,13 +28,6 @@
     when: role_osp_flavor == 'true'
 
   - block:
-      - name: create instance
-        include_role:
-          name: osp/osp-instance
-          tasks_from: create-osp-instance
-    when: role_osp_instance == 'true'
-
-  - block:
       - name: create keypair
         include_role:
           name: osp/osp-keypair
@@ -43,5 +44,12 @@
   - block:
       - name: create project network
         include_role:
-          name: osp/osp-network  
+          name: osp/osp-network
     when: role_osp_network == 'true'
+
+  - block:
+      - name: create instance
+        include_role:
+          name: osp/osp-instance
+          tasks_from: create-osp-instance
+    when: role_osp_instance == 'true'
