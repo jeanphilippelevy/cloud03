@@ -43,6 +43,5 @@
   - block:
       - name: create project network
         include_role:
-          name: osp/osp-network
-          #tasks_from: main
+          name: osp/osp-network  
     when: role_osp_network == 'true'
