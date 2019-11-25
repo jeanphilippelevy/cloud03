@@ -4,6 +4,8 @@
   gather_facts: no
 
   vars:
+    role_osp_project: 'false'
+    role_osp_user: 'false'
     role_osp_facts: 'false'
     role_osp_flavor: 'false'
     role_osp_keypair: 'false'
@@ -12,6 +14,20 @@
     role_osp_instance: 'false'
 
   tasks:
+
+  - block:
+      - name: create project
+        include_role:
+          name: osp/osp-project
+          tasks_from: create-osp-project
+    when: role_osp_project == 'true'
+
+  - block:
+      - name: create user
+        include_role:
+          name: osp/osp-user
+          tasks_from: create-osp-user
+    when: role_osp_user == 'true'
 
   - block:
       - name: gather facts

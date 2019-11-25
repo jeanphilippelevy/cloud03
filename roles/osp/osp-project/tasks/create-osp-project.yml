@@ -1,0 +1,6 @@
+---
+- name: Create osp project
+  os_project:
+    endpoint_type: "{{ osp_project_type }}"
+    state: "{{ osp_project_state }}"
+    name: "{{ osp_project_name }}"

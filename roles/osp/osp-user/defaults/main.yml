@@ -1,0 +1,6 @@
+---
+osp_user_state: "present"
+osp_user_name: "demouser01"
+osp_user_password: ""
+osp_project_name: "demo-project-01"
+osp_user_role: "admin"
