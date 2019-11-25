@@ -5,10 +5,11 @@
     name: "{{ osp_user_name }}"
     password: "{{ osp_user_password }}"
     default_project: "{{ osp_project_name }}"
-    #domain: "{{ osp_domain }}"
+    email: "{{ osp_user_email }}"
+    domain: "{{ osp_domain }}"
 
-- name: Add role to user
-  os_user_role:
-    user: "{{ osp_user_name }}"
-    role: "{{ osp_user_role }}"
-    project: "{{ osp_project_name }}"
+#- name: Add role to user
+#  os_user_role:
+#    user: "{{ osp_user_name }}"
+#    role: "{{ osp_user_role }}"
+#    project: "{{ osp_project_name }}"

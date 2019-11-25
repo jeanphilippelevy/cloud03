@@ -5,3 +5,4 @@ osp_user_password: ""
 osp_project_name: "demo-project-01"
 osp_user_role: "admin"
 osp_domain: "default"
+osp_user_email: user@test.com
