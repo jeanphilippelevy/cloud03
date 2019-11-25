@@ -5,3 +5,9 @@
     state: "{{ osp_project_state }}"
     name: "{{ osp_project_name }}"
     domain_id: "{{ osp_domain }}"
+
+- name: Add admin to project
+  os_user_role:
+    user: "admin"
+    role: "{{ osp_user_role }}"
+    project: "{{ osp_project_name }}"
