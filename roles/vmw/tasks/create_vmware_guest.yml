@@ -8,6 +8,7 @@
     folder: "{{ var_vm_folder }}"
     name: "{{ var_vmname }}"
     state: "{{ var_state }}"
+    force: "{{ var_force }}"
     template: "{{ var_vm_template }}"
     disk:
     - size_gb: "{{ var_disk_size_gb }}"

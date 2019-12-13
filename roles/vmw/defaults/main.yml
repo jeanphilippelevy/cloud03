@@ -3,6 +3,7 @@ create_vmware_guest_task: True
 
 var_vmname: "{{ instance_name }}"
 var_state: "present"
+var_force: "no"
 var_disk_size_gb: 20
 var_disk_type: "thin"
 var_disk_datastore: "Datastore"
