@@ -5,7 +5,7 @@
   vars:
     oc_shell_cmd1: 'oc whoami'
     oc_shell_cmd2: 'oc get nodes'
-    oc_shell_cmd3: 'pc het projects'
+    oc_shell_cmd3: 'oc get projects'
 
 
   tasks:
