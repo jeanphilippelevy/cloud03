@@ -1,0 +1,25 @@
+- name: Create new OpenShift project and user
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    var_project_name: "project-test-01"
+    var_user_name: "user01"
+    var_user_password: "password01"
+
+
+  tasks:
+    - name: Create project {{ var_project_name }}
+      shell: "oc new-project {{ var_project_name }}"
+      args:
+        chdir: "/root/"
+
+    - name: Create new user {{ var_user_name }}
+      shell: "htpasswd -B -b /etc/origin/master/htpasswd {{ var_user_name }} {{ var_user_password }}"
+      args:
+        chdir: "/root/"
+
+    - name: Add admin role to user {{ var_user_name }} on project {{ var_project_name }}
+      shell: "oc adm policy add-role-to-user admin {{ var_user_name }} -n {{ var_project_name }}"
+      args:
+        chdir: "/root/"
