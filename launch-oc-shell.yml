@@ -1,0 +1,25 @@
+- name: Launch oc shell commands
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    oc_shell_cmd1: 'oc whoami'
+    oc_shell_cmd2: 'oc get nodes'
+    oc_shell_cmd3: 'pc het projects'
+
+
+  tasks:
+    - name: Execute oc command 1
+      shell: "{{ oc_shell_cmd1 }}"
+      args:
+        chdir: "/root/"
+
+    - name: Execute oc command 2
+      shell: "{{ oc_shell_cmd2 }}"
+      args:
+        chdir: "/root/"
+
+    - name: Execute oc command 3
+      shell: "{{ oc_shell_cmd3 }}"
+      args:
+        chdir: "/root/"
