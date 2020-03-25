@@ -1,5 +1,5 @@
 - name: Launch cloudctl commands
-  hosts: localhost
+  hosts: all
   gather_facts: no
 
   vars:
