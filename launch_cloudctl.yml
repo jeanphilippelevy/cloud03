@@ -7,7 +7,7 @@
     var_mcm_user: ""
     var_mcm_password: ""
     var_mcm_namespace: ""
-    var_helm_packahe: ""
+    var_helm_package: ""
     var_helm_appname: ""
 
   tasks:
