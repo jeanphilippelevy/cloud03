@@ -1,0 +1,28 @@
+- name: Cloudctl deploy app
+  hosts: all
+  gather_facts: no
+
+  vars:
+    var_mcm_endpoint: ""
+    var_mcm_user: ""
+    var_mcm_password: ""
+    var_mcm_namespace: ""
+    var_helm_package: ""
+    var_helm_app_name: ""
+    var_helm_app_version: ""
+    var_helm_app_namespace: ""
+    var_helm_deployment_name: ""
+    var_helm_app_socle: ""
+    var_helm_app_tech_param: ""
+    var_helm_app_app_param: ""
+
+
+  tasks:
+    - name: Execute clouctl
+      shell: "cloudctl login -a {{ var_mcm_endpoint }} --skip-ssl-validation -u {{ var_mcm_user }} -p {{ var_mcm_password }} -n {{ var_mcm_namespace }}; \
+       helm init --client-only; \
+       helm version --tls; \
+       helm delete {{ var_helm_app_name }} --tls --purge"
+      args:
+        chdir: "/root/"
+      ignore_errors: yes
