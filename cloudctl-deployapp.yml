@@ -22,7 +22,7 @@
       shell: "cloudctl login -a {{ var_mcm_endpoint }} --skip-ssl-validation -u {{ var_mcm_user }} -p {{ var_mcm_password }} -n {{ var_mcm_namespace }}; \
        helm init --client-only; \
        helm version --tls; \
-       helm delete {{ var_helm_appname }} --tls --purge; \
+       helm delete {{ var_helm_app_name }} --tls --purge; \
        helm install {{ var_helm_package }} --name {{ var_helm_app_name }}  --namespace {{ var_mcm_namespace }} --set container.deployment.Namespace={{ var_helm_app_namespace }} --set container.deployment.version={{ var_helm_appversion }} --tls; \
        sleep 5;"
        #cloudctl mc get deployment {{ var_helm_deployment_name }}  -o yaml --all-clusters -n {{ var_mcm_namespace }} | grep {{ var_helm_app_version }}"
