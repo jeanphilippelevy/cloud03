@@ -22,7 +22,7 @@
       shell: "cloudctl login -a {{ var_mcm_endpoint }} --skip-ssl-validation -u {{ var_mcm_user }} -p {{ var_mcm_password }} -n {{ var_mcm_namespace }}; \
        helm init --client-only; \
        helm version --tls; \
-       helm delete {{ var_helm_app_name }} --tls --purge"
+       helm delete {{ var_helm_app_name }} --tls --purge;"
       args:
         chdir: "/root/"
       ignore_errors: yes
