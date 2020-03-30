@@ -12,6 +12,9 @@
     var_helm_app_version: ""
     var_helm_app_namespace: ""
     var_helm_deployment_name: ""
+    var_helm_app_socle: ""
+    var_helm_app_tech_param: ""
+    var_helm_app_app_param: ""
 
 
   tasks:
