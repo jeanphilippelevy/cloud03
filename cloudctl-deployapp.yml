@@ -15,6 +15,7 @@
     var_helm_app_socle: ""
     var_helm_app_tech_param: ""
     var_helm_app_app_param: ""
+    var_helm_seculevel: ""
 
 
   tasks:
@@ -24,8 +25,8 @@
        helm version --tls; \
        helm delete {{ var_helm_app_name }} --tls --purge; \
        helm install {{ var_helm_package }} --name {{ var_helm_app_name }}  --namespace {{ var_mcm_namespace }} --set container.deployment.Namespace={{ var_helm_app_namespace }} --set container.deployment.version={{ var_helm_app_version }} --tls; \
-       sleep 20; \
-       cloudctl mc get deployment {{ var_helm_deployment_name }}  --all-clusters  -n {{ var_helm_app_namespace }};"
+       sleep 20; "
+       #cloudctl mc get deployment {{ var_helm_deployment_name }}  --all-clusters  -n {{ var_helm_app_namespace }};"
       args:
         chdir: "/root/"
       ignore_errors: yes
