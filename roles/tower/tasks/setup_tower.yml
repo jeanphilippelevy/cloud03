@@ -24,6 +24,7 @@
     organization: "{{var_tower_org_name}}"
     scm_type: git
     scm_url: "{{var_tower_project_url}}"
+    scm_update_on_launch: true
 
 - name: Create a Team
   tower_team:
@@ -38,3 +39,4 @@
     project: "{{var_tower_project_name}}"
     inventory: "{{var_tower_inventory_name}}"
     playbook: "{{var_tower_job_play}}"
+    job_type: "run"

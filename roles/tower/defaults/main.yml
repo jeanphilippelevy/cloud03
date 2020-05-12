@@ -1,19 +1,14 @@
 ---
 setup_tower_task: True
 
-var_tower_org_name: "Demo Org"
+var_tower_org_name: "Demo Organization"
 var_tower_org_desc: "Demo Organization"
-
 var_tower_inventory_name: "Demo Inventory"
 var_tower_inventory_desc: "Demo inventory"
-
 var_tower_host_name: "localhost"
-
 var_tower_project_name: "Demo Project"
 var_tower_project_url: "https://github.com/jeanphilippelevy/cloud03"
-
 var_tower_team_name: "Demo Team"
 var_tower_team_desc: "Demo Team"
-
 var_tower_job_name: "Create VM"
 var_tower_job_play: "vmw-create-vm.yml"
