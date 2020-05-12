@@ -1,6 +1,40 @@
 ---
 - name: Create a new organization
   tower_organization:
-    name: "New Org"
-    description: "test org"
+    name: "{{var_tower_org_name}}"
+    description: "{{var_tower_org_desc}}"
     state: present
+
+- name: Create an Inventory
+  tower_inventory:
+    name: "{{var_tower_inventory_name}}"
+    description: "{{var_tower_inventory_desc}}"
+    organization: "{{var_tower_org_name}}"
+    state: present
+
+- name: Create a Host
+  tower_host:
+    name: "{{var_tower_host_name}}"
+    inventory: "{{var_tower_inventory_name}}"
+    state: present
+
+- name: Create a Project
+  tower_project:
+    name: "{{var_tower_project_name}}"
+    organization: "{{var_tower_org_name}}"
+    scm_type: git
+    scm_url: "{{var_tower_project_url}}"
+
+- name: Create a Team
+  tower_team:
+    name: "{{var_tower_team_name}}"
+    description: "{{var_tower_team_desc}}"
+    organization: "{{var_tower_org_name}}"
+    state: present
+
+- name: Create a Job Template
+  tower_job_template:
+    name: "{{var_tower_job_name}}"
+    project: "{{var_tower_project_name}}"
+    inventory: "{{var_tower_inventory_name}}"
+    playbook: "{{var_tower_job_play}}"
