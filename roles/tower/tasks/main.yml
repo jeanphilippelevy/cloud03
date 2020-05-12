@@ -1,0 +1,4 @@
+---
+- name: Includes tower setup task
+  include_tasks: "setup_tower.yml"
+  when: setup_tower_task == True

@@ -1,0 +1,13 @@
+---
+- name: Tower setup
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  collections:
+    - awx.awx
+
+  roles:
+    - role: tower
+      #instance_role: "undefined"
+      setup_tower_task: True

@@ -1,0 +1,6 @@
+---
+- name: Create a new organization
+  tower_organization:
+    name: "New Org"
+    description: "test org"
+    state: present
