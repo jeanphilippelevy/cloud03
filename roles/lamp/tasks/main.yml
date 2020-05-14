@@ -8,14 +8,14 @@
   include: task-attach-sub.yml
   when: var_sat == 'disabled'
 
-#- name: Installer les packages web
-#  yum:
-#    name: "{{ web_packages }}"
-#    state: present
-
-
 - name: Installer les packages web
-  shell: "yum -y install {{ web_packages_shell }}"
+  yum:
+    name: "{{ web_packages }}"
+    state: present
+    disablerepo: "rhel"
+
+# - name: Installer les packages web
+#   shell: "yum -y install {{ web_packages_shell }}"
 
 - name: Installer la page index
   template:
