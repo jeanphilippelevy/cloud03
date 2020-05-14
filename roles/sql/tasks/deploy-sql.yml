@@ -33,6 +33,7 @@
   yum:
     name: "{{ packages }}"
     state: present
+    disablerepo: "rhel"
   vars:
     packages: "{{ mssql_package }}"
 
@@ -86,6 +87,7 @@
 - name: Install mssql-tools and the unixODBC developer package
   yum:
     name: "{{ packages }}"
+    disablerepo: "rhel"
   vars:
     packages: "{{ mssql_tool_packages}}"
   environment:

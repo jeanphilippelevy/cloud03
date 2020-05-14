@@ -4,6 +4,16 @@
   hostname:
     name: "{{ instance_name }}"
 
+- name: Add the inventory into /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '.*{{ item }}$'
+    line: "{{ hostvars[item]['ansible_default_ipv4']['address'] }} {{item}}"
+    state: present
+  when: hostvars[item]['ansible_facts']['default_ipv4'] is defined
+  with_items:
+    - "{{ groups['all'] }}"
+
 - name: Inclure les taches d'attachement a la souscription par satellite
   include: task-attach-sub-sat.yml
   when: var_sat == 'enabled'
@@ -73,15 +83,14 @@
   #      name: "{{ lib_db }}"
   #      state: absent
 
-  #  - name: Installer les packages db
-  #    yum:
-  #      name: "{{ db_packages }}"
-  #      state: present
-  #      use_backend: yum
-
 - name: Installer les packages db
-  shell: "yum -y install {{ db_packages_shell }}"
+  yum:
+    name: "{{ db_packages }}"
+    state: present
+    disablerepo: "rhel"
 
+# - name: Installer les packages db
+#   shell: "yum -y install {{ db_packages_shell }}"
 
 - name: Activer le service firewalld
   service:
