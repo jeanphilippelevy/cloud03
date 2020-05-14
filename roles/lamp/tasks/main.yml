@@ -1,5 +1,9 @@
 ---
 
+- name: Set hostname
+  hostname:
+    name: "{{ instance_name }}"
+
 - name: Inclure les taches d'attachement a la souscription par satellite
   include: task-attach-sub-sat.yml
   when: var_sat == 'enabled'
