@@ -12,9 +12,8 @@
     - name: Enregistrement a access red hat avec la cle d'activation
       redhat_subscription:
         state: present
-        username: "{{var_rhnusername}}"
-        password: "{{var_rhnpassword}}"
-        auto_attach: true
+        activationkey: "{{ var_activationkey }}"
+        org_id: "{{  var_org_id }}"
       ignore_errors: True
 
     - name: Desactivation repo
