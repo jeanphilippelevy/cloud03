@@ -40,3 +40,12 @@
     inventory: "{{var_tower_inventory_name}}"
     playbook: "{{var_tower_job_play}}"
     job_type: "run"
+
+- name: Add a User
+  tower_user:
+    username: "{{var_tower_user_name}}"
+    password: "{{var_tower_user_pass}}"
+    email: "{{var_tower_user_mail}}"
+    first_name: "{{var_tower_user_first_name}}"
+    last_name: "{{var_tower_user_last_name}}"
+    state: present
