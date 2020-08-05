@@ -1,4 +1,5 @@
 ---
+clean_tower_task: False
 setup_tower_task: True
 
 var_tower_org_name: "Ansible Demo Organization"
@@ -6,7 +7,7 @@ var_tower_org_desc: "Ansible Demo Organization"
 var_tower_inventory_name: "Ansible Demo Inventory"
 var_tower_inventory_desc: "Ansible Demo inventory"
 var_tower_host_name: "localhost"
-var_tower_project_name: "ANsible Demo Project"
+var_tower_project_name: "Ansible Demo Project"
 var_tower_project_url: "https://github.com/jeanphilippelevy/cloud03"
 var_tower_team_name: "Ansible Demo Team"
 var_tower_team_desc: "Ansible Demo Team"

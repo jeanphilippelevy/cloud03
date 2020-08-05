@@ -1,4 +1,9 @@
 ---
+- name: Includes tower clean task
+  include_tasks: "clean_tower.yml"
+  when: clean_tower_task|bool == True
+
 - name: Includes tower setup task
   include_tasks: "setup_tower.yml"
-  when: setup_tower_task == True
+  when: setup_tower_task|bool == True
+

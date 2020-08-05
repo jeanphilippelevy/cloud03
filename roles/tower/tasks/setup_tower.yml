@@ -1,5 +1,5 @@
 ---
-- name: Create a new organization
+- name: Create an Organization
   tower_organization:
     name: "{{var_tower_org_name}}"
     description: "{{var_tower_org_desc}}"

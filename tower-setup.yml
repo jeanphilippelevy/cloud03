@@ -9,5 +9,3 @@
 
   roles:
     - role: tower
-      #instance_role: "undefined"
-      setup_tower_task: True
